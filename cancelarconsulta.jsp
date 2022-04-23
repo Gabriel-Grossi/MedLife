@@ -37,6 +37,17 @@
                                         <label for="patientScheduleHour">Data</label>
                                         <input type="date" name="patientScheduleDate" id="patientScheduleDate" required>
                                     </div>
+                                    <div class="prescription-input">
+                                        <label for="patientDoctors">Médico(a)</label>
+                                        <select name="patientDoctors" id="patientDoctors" required>
+                                            <option value="#">Selecione um(a) médico(a)</option>
+                                            <option value="Ana Maria Gomes">Dr. Ana Maria Gomes</option>
+                                            <option value="Alberto José Belchior">Dr. Alberto José Belchior</option>
+                                            <option value="Bruna Mello Siqueira">Dr. Bruna Mello Siqueira</option>
+                                            <option value="Carlos Eduardo Gomes Lacerda">Dr. Carlos Eduardo Gomes Lacerda</option>
+                                            <option value="Michel Matias de Souza">Dr. Michel Matias de Souza</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <button type="submit" onclick="getHourAndData()">
                                     Cancelar Consulta
