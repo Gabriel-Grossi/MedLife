@@ -1,0 +1,554 @@
+header {
+  width: 100%;
+  background-color: #092670;
+  padding: .5rem 1.375rem;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+header nav ul {
+  list-style: none;
+}
+
+header nav ul li {
+  background: red;
+  border-radius: 1rem;
+  padding: .35rem 1rem;
+  -webkit-filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, 0.25));
+}
+
+header nav ul li a {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 350px) {
+  header nav ul li a p {
+    display: none;
+  }
+}
+
+header nav span.menu-icon {
+  font-size: 2.5rem !important;
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 0;
+  background-color: whitesmoke;
+  height: 100%;
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  display: none;
+}
+
+@media screen and (max-width: 612px) {
+  .sidebar {
+    width: 0;
+  }
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: .25rem 0;
+}
+
+.sidebar ul li, .sidebar ul .accordion, .sidebar ul details {
+  padding: .375rem 1.375rem;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.sidebar ul li:hover, .sidebar ul .accordion:hover, .sidebar ul details:hover {
+  background: #0095ff;
+  color: white;
+  margin: 0 .5rem;
+  width: calc(100% - 1rem);
+  -webkit-transition: margin .125s ease-out;
+  transition: margin .125s ease-out;
+  border-radius: 1rem;
+  -webkit-filter: drop-shadow(0.125rem 0.25rem 0.375rem rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0.125rem 0.25rem 0.375rem rgba(0, 0, 0, 0.15));
+}
+
+.sidebar ul li:hover a, .sidebar ul li:hover summary, .sidebar ul .accordion:hover a, .sidebar ul .accordion:hover summary, .sidebar ul details:hover a, .sidebar ul details:hover summary {
+  color: white;
+}
+
+.sidebar ul li a, .sidebar ul li summary, .sidebar ul .accordion a, .sidebar ul .accordion summary, .sidebar ul details a, .sidebar ul details summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: .5rem .25rem;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  color: #003dd6;
+}
+
+.sidebar ul li a .sidebar-paragraph, .sidebar ul li summary .sidebar-paragraph, .sidebar ul .accordion a .sidebar-paragraph, .sidebar ul .accordion summary .sidebar-paragraph, .sidebar ul details a .sidebar-paragraph, .sidebar ul details summary .sidebar-paragraph {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidebar ul li a:hover, .sidebar ul li summary:hover, .sidebar ul .accordion a:hover, .sidebar ul .accordion summary:hover, .sidebar ul details a:hover, .sidebar ul details summary:hover {
+  color: white;
+}
+
+.sidebar ul li:hover, .sidebar ul .accordion:hover, .sidebar ul details:hover {
+  color: white;
+}
+
+.sidebar ul .panel, .sidebar ul .docs-panel, .sidebar ul .patient-panel {
+  display: none;
+  color: white;
+  overflow: hidden;
+}
+
+.sidebar ul .panel ul, .sidebar ul .docs-panel ul, .sidebar ul .patient-panel ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: .25rem;
+  list-style: none;
+  width: 100%;
+  padding: .5rem 1rem;
+}
+
+.sidebar ul .panel ul li, .sidebar ul .docs-panel ul li, .sidebar ul .patient-panel ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  padding: .25rem 1.375rem;
+}
+
+.sidebar ul .panel ul li:hover, .sidebar ul .docs-panel ul li:hover, .sidebar ul .patient-panel ul li:hover {
+  background-color: #0095ff;
+}
+
+.sidebar ul .panel ul li a p, .sidebar ul .docs-panel ul li a p, .sidebar ul .patient-panel ul li a p {
+  font-size: .9rem;
+}
+
+.sidebar ul details {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.sidebar ul details summary {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  list-style: none !important;
+}
+
+#modal-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25);
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#modal-wrapper .modal {
+  background-color: white;
+  border-radius: .5rem;
+  display: -ms-grid;
+  display: grid;
+  -webkit-filter: drop-shadow(0.125rem 0.25rem 0.375rem rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0.125rem 0.25rem 0.375rem rgba(0, 0, 0, 0.25));
+  padding: 2rem;
+  width: 25rem;
+}
+
+#modal-wrapper .modal span.close-icon {
+  font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  cursor: pointer;
+}
+
+#modal-wrapper .modal span.done-icon {
+  font-size: 5rem !important;
+  color: #00f;
+  border: 4px solid;
+  border-radius: 50%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 1rem auto;
+}
+
+#modal-wrapper .modal .modal-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: .5rem;
+  margin: .5rem 0;
+}
+
+#modal-wrapper .modal .modal-input textarea {
+  resize: none;
+  height: 5rem;
+}
+
+#modal-wrapper .modal button {
+  background-color: #092670;
+  color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: .5rem 1rem;
+  margin: 2rem 0;
+}
+
+#modal-wrapper .modal h2 {
+  padding: 3rem 0;
+}
+
+#modal-wrapper .modal h2#scheduled-appointment {
+  padding: 1rem 0 !important;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+}
+
+button {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+select {
+  border: none;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 3rem;
+  padding: 3rem 6rem;
+}
+
+.social h2 {
+  font-size: 1.5rem !important;
+}
+
+.social .social-media-group {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(12rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.social .social-media-group .social-media a {
+  gap: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  color: #1e49b6;
+}
+
+.overlay-menu {
+  background: #142870;
+  display: none;
+  height: 100%;
+  padding: 2rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 15rem;
+}
+
+.overlay-menu .close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  margin-bottom: 1rem;
+}
+
+.overlay-menu .close .close-icon {
+  padding: .5rem;
+  background-color: #0095ff;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.overlay-menu ul {
+  display: -ms-grid;
+  display: grid;
+  list-style: none;
+  gap: 1.25rem;
+}
+
+.overlay-menu ul li a {
+  color: #0095ff;
+}
+
+.overlay-menu ul li a:hover {
+  border-bottom: 0.0625rem solid #0095ff;
+}
+
+.move-top {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #0095ff;
+  border-radius: 50%;
+  bottom: 2rem;
+  cursor: pointer;
+  display: -ms-grid;
+  display: grid;
+  padding: 1rem;
+  position: fixed;
+  right: 2rem;
+  z-index: 6;
+}
+
+.move-top span {
+  color: white;
+}
+
+.share {
+  background-color: #0095ff;
+  border-radius: 50%;
+  bottom: 6rem;
+  color: #092670;
+  padding: 1rem;
+  position: fixed;
+  right: 2rem;
+  z-index: 7;
+}
+
+.share a {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.vertical-content {
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 .5rem;
+  height: 10vh;
+  background: #142870;
+}
+
+footer span {
+  color: white;
+}
+
+body {
+  background: radial-gradient(153% 221.18% at 39.64% -31.3%, black 0%, #092670 36.46%, #003dd6 78.12%, white 100%);
+}
+
+.login-box {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.login-box .login {
+  background: linear-gradient(139deg, rgba(255, 255, 255, 0.5) -9.05%, rgba(255, 255, 255, 0.1) 99.66%);
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem 4rem;
+}
+
+.login-box .login img {
+  width: 12rem;
+}
+
+.login-box .login form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem 0;
+  color: white;
+  gap: .5rem;
+}
+
+.login-box .login form label {
+  font-weight: 500;
+}
+
+.login-box .login form input {
+  background: transparent;
+  border: 0.125rem solid white;
+  border-radius: 5px;
+  padding: .375rem 1rem;
+  font-weight: 400;
+  margin-bottom: .75rem;
+  color: white;
+}
+
+.login-box .login form input::-webkit-input-placeholder {
+  color: #bbbbbb;
+}
+
+.login-box .login form input:-ms-input-placeholder {
+  color: #bbbbbb;
+}
+
+.login-box .login form input::-ms-input-placeholder {
+  color: #bbbbbb;
+}
+
+.login-box .login form input::placeholder {
+  color: #bbbbbb;
+}
+
+.login-box .login form input:focus-visible {
+  border: none;
+  outline: #0095ff solid;
+  outline-width: medium;
+  -webkit-filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.25));
+}
+
+.login-box .login form input[type="submit"] {
+  background-color: #092670;
+  border: none;
+  color: white;
+  cursor: pointer;
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.login-box .login form input[type="submit"]:hover {
+  -webkit-transform: translateY(0.25rem);
+          transform: translateY(0.25rem);
+  -webkit-filter: none;
+          filter: none;
+}
+/*# sourceMappingURL=login.css.map */

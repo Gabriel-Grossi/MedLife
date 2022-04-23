@@ -1,0 +1,803 @@
+header {
+  width: 100%;
+  background-color: #092670;
+  padding: .5rem 1.375rem;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+header nav ul {
+  list-style: none;
+}
+
+header nav ul li {
+  background: red;
+  border-radius: 1rem;
+  padding: .35rem 1rem;
+  -webkit-filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, 0.25));
+}
+
+header nav ul li a {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 350px) {
+  header nav ul li a p {
+    display: none;
+  }
+}
+
+header nav span.menu-icon {
+  font-size: 2.5rem !important;
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 0;
+  background-color: whitesmoke;
+  height: 100%;
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  display: none;
+}
+
+@media screen and (max-width: 612px) {
+  .sidebar {
+    width: 0;
+  }
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: .25rem 0;
+}
+
+.sidebar ul li, .sidebar ul .accordion, .sidebar ul details {
+  padding: .375rem 1.375rem;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.sidebar ul li:hover, .sidebar ul .accordion:hover, .sidebar ul details:hover {
+  background: #0095ff;
+  color: white;
+  margin: 0 .5rem;
+  width: calc(100% - 1rem);
+  -webkit-transition: margin .125s ease-out;
+  transition: margin .125s ease-out;
+  border-radius: 1rem;
+  -webkit-filter: drop-shadow(0.125rem 0.25rem 0.375rem rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0.125rem 0.25rem 0.375rem rgba(0, 0, 0, 0.15));
+}
+
+.sidebar ul li:hover a, .sidebar ul li:hover summary, .sidebar ul .accordion:hover a, .sidebar ul .accordion:hover summary, .sidebar ul details:hover a, .sidebar ul details:hover summary {
+  color: white;
+}
+
+.sidebar ul li a, .sidebar ul li summary, .sidebar ul .accordion a, .sidebar ul .accordion summary, .sidebar ul details a, .sidebar ul details summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: .5rem .25rem;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  color: #003dd6;
+}
+
+.sidebar ul li a .sidebar-paragraph, .sidebar ul li summary .sidebar-paragraph, .sidebar ul .accordion a .sidebar-paragraph, .sidebar ul .accordion summary .sidebar-paragraph, .sidebar ul details a .sidebar-paragraph, .sidebar ul details summary .sidebar-paragraph {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidebar ul li a:hover, .sidebar ul li summary:hover, .sidebar ul .accordion a:hover, .sidebar ul .accordion summary:hover, .sidebar ul details a:hover, .sidebar ul details summary:hover {
+  color: white;
+}
+
+.sidebar ul li:hover, .sidebar ul .accordion:hover, .sidebar ul details:hover {
+  color: white;
+}
+
+.sidebar ul .panel, .sidebar ul .docs-panel, .sidebar ul .patient-panel {
+  display: none;
+  color: white;
+  overflow: hidden;
+}
+
+.sidebar ul .panel ul, .sidebar ul .docs-panel ul, .sidebar ul .patient-panel ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: .25rem;
+  list-style: none;
+  width: 100%;
+  padding: .5rem 1rem;
+}
+
+.sidebar ul .panel ul li, .sidebar ul .docs-panel ul li, .sidebar ul .patient-panel ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  padding: .25rem 1.375rem;
+}
+
+.sidebar ul .panel ul li:hover, .sidebar ul .docs-panel ul li:hover, .sidebar ul .patient-panel ul li:hover {
+  background-color: #0095ff;
+}
+
+.sidebar ul .panel ul li a p, .sidebar ul .docs-panel ul li a p, .sidebar ul .patient-panel ul li a p {
+  font-size: .9rem;
+}
+
+.sidebar ul details {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.sidebar ul details summary {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  list-style: none !important;
+}
+
+#modal-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25);
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#modal-wrapper .modal {
+  background-color: white;
+  border-radius: .5rem;
+  display: -ms-grid;
+  display: grid;
+  -webkit-filter: drop-shadow(0.125rem 0.25rem 0.375rem rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0.125rem 0.25rem 0.375rem rgba(0, 0, 0, 0.25));
+  padding: 2rem;
+  width: 25rem;
+}
+
+#modal-wrapper .modal span.close-icon {
+  font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  cursor: pointer;
+}
+
+#modal-wrapper .modal span.done-icon {
+  font-size: 5rem !important;
+  color: #00f;
+  border: 4px solid;
+  border-radius: 50%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 1rem auto;
+}
+
+#modal-wrapper .modal .modal-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: .5rem;
+  margin: .5rem 0;
+}
+
+#modal-wrapper .modal .modal-input textarea {
+  resize: none;
+  height: 5rem;
+}
+
+#modal-wrapper .modal button {
+  background-color: #092670;
+  color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: .5rem 1rem;
+  margin: 2rem 0;
+}
+
+#modal-wrapper .modal h2 {
+  padding: 3rem 0;
+}
+
+#modal-wrapper .modal h2#scheduled-appointment {
+  padding: 1rem 0 !important;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+}
+
+button {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+select {
+  border: none;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 3rem;
+  padding: 3rem 6rem;
+}
+
+.social h2 {
+  font-size: 1.5rem !important;
+}
+
+.social .social-media-group {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(12rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.social .social-media-group .social-media a {
+  gap: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  color: #1e49b6;
+}
+
+.overlay-menu {
+  background: #142870;
+  display: none;
+  height: 100%;
+  padding: 2rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 15rem;
+}
+
+.overlay-menu .close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  margin-bottom: 1rem;
+}
+
+.overlay-menu .close .close-icon {
+  padding: .5rem;
+  background-color: #0095ff;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.overlay-menu ul {
+  display: -ms-grid;
+  display: grid;
+  list-style: none;
+  gap: 1.25rem;
+}
+
+.overlay-menu ul li a {
+  color: #0095ff;
+}
+
+.overlay-menu ul li a:hover {
+  border-bottom: 0.0625rem solid #0095ff;
+}
+
+.move-top {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #0095ff;
+  border-radius: 50%;
+  bottom: 2rem;
+  cursor: pointer;
+  display: -ms-grid;
+  display: grid;
+  padding: 1rem;
+  position: fixed;
+  right: 2rem;
+  z-index: 6;
+}
+
+.move-top span {
+  color: white;
+}
+
+.share {
+  background-color: #0095ff;
+  border-radius: 50%;
+  bottom: 6rem;
+  color: #092670;
+  padding: 1rem;
+  position: fixed;
+  right: 2rem;
+  z-index: 7;
+}
+
+.share a {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.vertical-content {
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 .5rem;
+  height: 10vh;
+  background: #142870;
+}
+
+footer span {
+  color: white;
+}
+
+main .home-title {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: calc(100% - 15rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .home-title img {
+  width: calc(100% - 45rem);
+  margin: auto;
+}
+
+main .content {
+  padding: 3rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (max-width: 612px) {
+  main .content {
+    width: 100%;
+    padding: 3rem 1.5rem;
+  }
+}
+
+main .content h1 {
+  color: #1e49b6;
+  font-size: 2rem;
+}
+
+main .content h3 {
+  color: #003dd6;
+}
+
+main .content .content-subtitle {
+  color: #707070;
+}
+
+main .content .form-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem 0;
+}
+
+@media screen and (max-width: 480px) {
+  main .content .form-search {
+    width: 100%;
+  }
+}
+
+main .content .form-search .patientData {
+  color: #707070;
+  padding: .25rem 0;
+}
+
+main .content .form-search .form-input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important;
+}
+
+main .content .form-search .form-input-group .form-input-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .content .form-search .form-input-group .form-input-field .form-input {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+main .content .form-search .form-input-group .form-input-field .form-input .labelRadio {
+  color: #142870;
+}
+
+main .content .form-search .form-input-group .form-input-field input[type="text"] {
+  width: 20rem;
+}
+
+main .content .form-search .form-input-group .form-input-field input[type="text"]:focus-visible {
+  border: none;
+  outline: 0.0625rem solid #0095ff;
+}
+
+main .content .form-search .form-input-group .form-input-field input[type="text"], main .content .form-search .form-input-group .form-input-field input[type="number"], main .content .form-search .form-input-group .form-input-field textarea {
+  padding: .25rem .5rem;
+}
+
+main .content .form-search .form-input-group .form-input-field textarea {
+  height: 10rem;
+}
+
+main .content .form-search input[type="submit"] {
+  background: #092670;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 2rem;
+  padding: .5rem 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: auto;
+}
+
+main .content .form-search input[type="text"] {
+  padding: .125rem .25rem;
+}
+
+main .content .results-items-amount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .content .results-item-amount-description {
+  color: #707070;
+}
+
+main .content .patient-group {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(19rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  gap: 1rem;
+  height: auto;
+  margin-top: 2rem;
+  padding: 1rem .25rem;
+  overflow: auto;
+}
+
+main .content .patient-group .patient {
+  -webkit-animation: fadeProduct .245s ease-out;
+          animation: fadeProduct .245s ease-out;
+  background-color: white;
+  border-radius: .5rem;
+  color: #1e49b6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-filter: drop-shadow(0.125rem 0.25rem 0.25rem rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0.125rem 0.25rem 0.25rem rgba(0, 0, 0, 0.15));
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem;
+}
+
+main .content .patient-group .patient:hover {
+  -webkit-filter: none;
+          filter: none;
+  outline: 0.0625rem solid rgba(0, 0, 0, 0.25);
+}
+
+main .content .patient-group .patient form input {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 1rem 0;
+  padding: .25rem .5rem;
+  background: none;
+  outline: 0.0625rem solid #003dd6;
+  color: #003dd6;
+  border: none;
+}
+
+main .content .patient-group .patient form input:hover {
+  outline: none;
+  background: #003dd6;
+  color: white;
+  padding: .25rem .5rem;
+}
+
+main .content .patient-group .patient .patient-last-seen {
+  color: #707070;
+}
+
+main .content .content-prescription, main .content .content-appointment, main .content .content-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.25rem 0;
+  margin: 3rem 0;
+}
+
+main .content .content-prescription button, main .content .content-appointment button, main .content .content-search button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: #092670;
+  padding: .5rem 1rem;
+  margin: 1rem 0;
+  color: white;
+}
+
+main .content .content-prescription button[type="reset"], main .content .content-appointment button[type="reset"], main .content .content-search button[type="reset"] {
+  background: white;
+  color: #092670;
+  outline: 0.0625rem solid #092670;
+  margin-left: 1rem;
+}
+
+main .content .content-prescription form .form-input-group, main .content .content-appointment form .form-input-group, main .content .content-search form .form-input-group {
+  gap: 1.25rem  !important;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(22rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  -ms-grid-rows: (minmax(5rem, 1fr))[auto-fill];
+      grid-template-rows: repeat(auto-fill, minmax(5rem, 1fr));
+}
+
+main .content .content-prescription form .form-input-group .prescription-input, main .content .content-prescription form .form-input-group .appointment-input, main .content .content-prescription form .form-input-group .form-input-field, main .content .content-prescription form .form-input-group .form-input-group, main .content .content-appointment form .form-input-group .prescription-input, main .content .content-appointment form .form-input-group .appointment-input, main .content .content-appointment form .form-input-group .form-input-field, main .content .content-appointment form .form-input-group .form-input-group, main .content .content-search form .form-input-group .prescription-input, main .content .content-search form .form-input-group .appointment-input, main .content .content-search form .form-input-group .form-input-field, main .content .content-search form .form-input-group .form-input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important;
+}
+
+main .content .content-prescription form .form-input-group .prescription-input textarea, main .content .content-prescription form .form-input-group .appointment-input textarea, main .content .content-prescription form .form-input-group .form-input-field textarea, main .content .content-prescription form .form-input-group .form-input-group textarea, main .content .content-appointment form .form-input-group .prescription-input textarea, main .content .content-appointment form .form-input-group .appointment-input textarea, main .content .content-appointment form .form-input-group .form-input-field textarea, main .content .content-appointment form .form-input-group .form-input-group textarea, main .content .content-search form .form-input-group .prescription-input textarea, main .content .content-search form .form-input-group .appointment-input textarea, main .content .content-search form .form-input-group .form-input-field textarea, main .content .content-search form .form-input-group .form-input-group textarea {
+  resize: none;
+  height: 7rem;
+  margin: .25rem 0;
+}
+
+main .content .content-prescription form .form-input-group .prescription-input label, main .content .content-prescription form .form-input-group .appointment-input label, main .content .content-prescription form .form-input-group .form-input-field label, main .content .content-prescription form .form-input-group .form-input-group label, main .content .content-appointment form .form-input-group .prescription-input label, main .content .content-appointment form .form-input-group .appointment-input label, main .content .content-appointment form .form-input-group .form-input-field label, main .content .content-appointment form .form-input-group .form-input-group label, main .content .content-search form .form-input-group .prescription-input label, main .content .content-search form .form-input-group .appointment-input label, main .content .content-search form .form-input-group .form-input-field label, main .content .content-search form .form-input-group .form-input-group label {
+  color: #707070;
+}
+
+main .content .content-prescription form .form-input-group .prescription-input input, main .content .content-prescription form .form-input-group .appointment-input input, main .content .content-prescription form .form-input-group .form-input-field input, main .content .content-prescription form .form-input-group .form-input-group input, main .content .content-appointment form .form-input-group .prescription-input input, main .content .content-appointment form .form-input-group .appointment-input input, main .content .content-appointment form .form-input-group .form-input-field input, main .content .content-appointment form .form-input-group .form-input-group input, main .content .content-search form .form-input-group .prescription-input input, main .content .content-search form .form-input-group .appointment-input input, main .content .content-search form .form-input-group .form-input-field input, main .content .content-search form .form-input-group .form-input-group input {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  padding: .25rem .5rem;
+}
+
+main .content .content-prescription .prescription-input, main .content .content-prescription .appointment-input, main .content .content-prescription .form-input-field, main .content .content-prescription .form-input-group, main .content .content-appointment .prescription-input, main .content .content-appointment .appointment-input, main .content .content-appointment .form-input-field, main .content .content-appointment .form-input-group, main .content .content-search .prescription-input, main .content .content-search .appointment-input, main .content .content-search .form-input-field, main .content .content-search .form-input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important;
+}
+
+main .content .content-prescription .prescription-input textarea, main .content .content-prescription .appointment-input textarea, main .content .content-prescription .form-input-field textarea, main .content .content-prescription .form-input-group textarea, main .content .content-appointment .prescription-input textarea, main .content .content-appointment .appointment-input textarea, main .content .content-appointment .form-input-field textarea, main .content .content-appointment .form-input-group textarea, main .content .content-search .prescription-input textarea, main .content .content-search .appointment-input textarea, main .content .content-search .form-input-field textarea, main .content .content-search .form-input-group textarea {
+  resize: none;
+  height: 7rem;
+  margin: .25rem 0;
+}
+
+main .content .content-prescription .prescription-input label, main .content .content-prescription .appointment-input label, main .content .content-prescription .form-input-field label, main .content .content-prescription .form-input-group label, main .content .content-appointment .prescription-input label, main .content .content-appointment .appointment-input label, main .content .content-appointment .form-input-field label, main .content .content-appointment .form-input-group label, main .content .content-search .prescription-input label, main .content .content-search .appointment-input label, main .content .content-search .form-input-field label, main .content .content-search .form-input-group label {
+  color: #707070;
+}
+
+main .content .content-prescription .prescription-input input, main .content .content-prescription .prescription-input select, main .content .content-prescription .appointment-input input, main .content .content-prescription .appointment-input select, main .content .content-prescription .form-input-field input, main .content .content-prescription .form-input-field select, main .content .content-prescription .form-input-group input, main .content .content-prescription .form-input-group select, main .content .content-appointment .prescription-input input, main .content .content-appointment .prescription-input select, main .content .content-appointment .appointment-input input, main .content .content-appointment .appointment-input select, main .content .content-appointment .form-input-field input, main .content .content-appointment .form-input-field select, main .content .content-appointment .form-input-group input, main .content .content-appointment .form-input-group select, main .content .content-search .prescription-input input, main .content .content-search .prescription-input select, main .content .content-search .appointment-input input, main .content .content-search .appointment-input select, main .content .content-search .form-input-field input, main .content .content-search .form-input-field select, main .content .content-search .form-input-group input, main .content .content-search .form-input-group select {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  padding: .25rem .5rem;
+  width: 85% !important;
+}
+
+.active {
+  display: block;
+  top: 4rem;
+  width: 19rem;
+}
+
+.active-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 22rem !important;
+  position: absolute;
+  width: calc(100% - 25rem) !important;
+  height: calc(100% - 1rem);
+  padding: 2rem 0 !important;
+  -webkit-box-pack: start !important;
+      -ms-flex-pack: start !important;
+          justify-content: flex-start !important;
+}
+
+.active-content h1 {
+  padding-top: 2rem;
+}
+
+.active-content img {
+  width: calc(100% - 35rem) !important;
+}
+
+.active-accordion {
+  display: block !important;
+}
+
+.active-modal {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+/*# sourceMappingURL=main.css.map */

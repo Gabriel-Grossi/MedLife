@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="public/assets/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="public/styles/login/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <title>MedLife | Login</title>
+</head>
+
+<body>
+    <section class="login-box">
+        <div class="login">
+            <img src="public/assets/logo.svg" alt="Logo MedLife">
+            <form id="form-login" method="post">
+                <label for="userName">Usuário</label>
+                <input type="text" name="userName" id="user-name" placeholder="Insira o seu usuário" autofocus required>
+                <label for="userPassword">Senha</label>
+                <input type="password" name="userPassword" placeholder="Insira a senha" pattern="^(?=[a-z]*[A-Z])(?=\D*\d)[^\s]{8,}$">
+                <input type="submit" id="login-btn" value="Fazer Login">
+            </form>
+        </div>
+    </section>
+    <script>
+        const loginbtn  =  document.getElementById('login-btn');
+        const userName  =  document.getElementById('user-name');
+        const form  =  document.getElementById('form-login');
+
+        loginbtn.onclick = () =>{
+            const user = userName.value.substring(0,3) == "sec" ? form.setAttribute("action", "home_sec.jsp") : form.setAttribute("action", "home.jsp");
+        }
+    </script>
+</body>
+
+</html>

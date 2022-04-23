@@ -1,0 +1,56 @@
+#modal-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $black25;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    .modal{
+        background-color: $white;
+        border-radius: .5rem;
+        display: grid;
+        filter: drop-shadow(.125rem .25rem .375rem $black25);
+        padding: 2rem;
+        width: 25rem;
+        span.close-icon{
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: end;
+            cursor: pointer;
+        }
+        span.done-icon{
+            font-size: 5rem !important;
+            color: #00f;
+            border: 4px solid;
+            border-radius: 50%;
+            width: max-content;
+            margin: 1rem auto;
+        }
+        .modal-input{
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            margin: .5rem 0;
+            textarea{
+                resize: none;
+                height: 5rem;
+            }
+        }
+        button{
+            background-color: $blue800;
+            color: $white;
+            width: fit-content;
+            padding: .5rem 1rem;
+            margin: 2rem 0;
+        }
+        h2{
+            padding: 3rem 0 ;
+        }
+        h2#scheduled-appointment{
+            padding: 1rem 0 !important;
+        }
+    }
+}
