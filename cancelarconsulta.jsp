@@ -23,7 +23,7 @@
                         <h1>Cancelar Consulta</h1>
                         <small class="content-subtitle">Preencha os campos a seguir para cancelar consulta.</small>
                         <div class="content-prescription">
-                            <form method="post"><!--<form action="" method="post">-->
+                            <form action="src/ca_consulta.jsp" method="post">
                                 <div class="form-input-group">
                                     <div class="prescription-input">
                                         <label for="patientName">Nome do Paciente</label>

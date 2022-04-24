@@ -23,7 +23,7 @@
                         <h1>Agendar Consulta</h1>
                         <small class="content-subtitle">Preencha os campos a seguir para agendar consulta.</small>
                         <div class="content-appointment">
-                            <form action="">
+                            <form action="src/ag_consulta.jsp" method="post" >
                                 <div class="form-input-group">
                                     <div class="appointment-input">
                                         <label for="patientName">Nome do Paciente</label>
@@ -35,7 +35,7 @@
                                         <input type="time" name="patientScheduleHour" id="patientScheduleHour">
                                     </div>
                                     <div class="appointment-input">
-                                        <label for="patientScheduleHour">Data</label>
+                                        <label for="patientScheduleDate">Data</label>
                                         <input type="date" name="patientScheduleDate" id="patientScheduleDate">
                                     </div>
                                     <div class="appointment-input">

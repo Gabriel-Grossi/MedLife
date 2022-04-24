@@ -23,24 +23,23 @@
             String addressState = request.getParameter("patientAddressState");
             String cpf = request.getParameter("patientAddressCPF");
             String rg = request.getParameter("patientAddressRG");
-            String rg = request.getParameter("patientAddressRG");
             String medicalInsurance = request.getParameter("patientMedicalInsurance");
             
             String aniv="to_date('" + birthday + "','yyyy/mm/dd')";
 
         try{
-            Class.forName("oracle.jdbc.driver.OracleDriver");  
-            Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","fam");   
-        String Q="INSERT INTO Patient(nome,email,dtaniv,salario) 
-        values('" + nome + "','" + cargo + "'," + aniv + "," +sal+ ")";
-        //String Q="insert into func(nome,cargo,salario) values('" + nome + "','" + cargo + "'," +sal+ ")";
+            String usuario = "seuUsuario";
+            String senha = "suaSenha";
+            String url = "jdbc:sqlserver://localhost:1433;databaseName=seuBanco" + ";user=" + usuario + ";password=" + senha + ";";
+            
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");  
+            Connection con=DriverManager.getConnection(url);   
+            String Q="INSERT INTO Patient(nome,email,dtaniv,endereco,complemento,numero,cep,bairro,cidade,uf,cpf,rg,conv) values('"+nome+"','" +email+"',"+aniv +",'"+address+"','"+addressComplement+'",'"+addressNumber+"', '"+addressCEP+"','"+addressNeighborhood+"','"+addressCity+"','"+cpf+"','"+rg+"','"+medicalInsurance+"')";
 
             Statement st=con.createStatement();
             st.executeUpdate(Q);
-        //	out.println("OK");
             st.close();
             con.close();
-            //response.sendRedirect("http://localhost:8090/curjp/index.html");
             response.sendRedirect("index.html");
         }
 

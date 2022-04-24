@@ -24,13 +24,14 @@
                         <small class="content-subtitle">Preencha os campos a seguir para ter acesso ao
                             prontuário</small>
                         <div class="content-search">
-                            <form action="">
+                            <form action="src/ve_prontuario.jsp" method="get">
                                 <div class="form-input-group">
                                     <div class="form-input-field">
                                         <label for="patientName" class="patientData">Nome</label>
                                         <input type="text" name="patientName" id="patientSearch"
                                             placeholder="Insira aqui o nome do paciente">
                                     </div>
+                                    <input type="submit" value="🔍" class="search-button">
                                 </div>
                             </form>
                         </div>
@@ -38,7 +39,7 @@
                         <div class="results-items-amount">
                             <div class="results-item-amount-description">
                             </div>
-                            <div class="results-item-amount-content">
+                            <!--div class="results-item-amount-content">
                                 <select name="options-filter" id="options-filter" class="options-filter">
                                     <option value="">Escolha uma opção</option>
                                     <option value="Amil">Amil</option>
@@ -47,12 +48,7 @@
                                     <option value="Sulamerica">Sulamerica</option>
                                     <option value="Transmontano">Transmontano</option>
                                 </select>
-                                <!--button type="button" class="middle-filter">
-                                    <span class="material-icons-round">
-                                        filter_alt
-                                    </span>
-                                </button-->
-                            </div>
+                            </div-->
                         </div>
                         <div class="patient-group">
 

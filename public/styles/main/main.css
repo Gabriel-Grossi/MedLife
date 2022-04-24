@@ -706,6 +706,9 @@ main .content .content-prescription form .form-input-group, main .content .conte
       grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
   -ms-grid-rows: (minmax(5rem, 1fr))[auto-fill];
       grid-template-rows: repeat(auto-fill, minmax(5rem, 1fr));
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main .content .content-prescription form .form-input-group .prescription-input, main .content .content-prescription form .form-input-group .appointment-input, main .content .content-prescription form .form-input-group .form-input-field, main .content .content-prescription form .form-input-group .form-input-group, main .content .content-appointment form .form-input-group .prescription-input, main .content .content-appointment form .form-input-group .appointment-input, main .content .content-appointment form .form-input-group .form-input-field, main .content .content-appointment form .form-input-group .form-input-group, main .content .content-search form .form-input-group .prescription-input, main .content .content-search form .form-input-group .appointment-input, main .content .content-search form .form-input-group .form-input-field, main .content .content-search form .form-input-group .form-input-group {
@@ -761,6 +764,16 @@ main .content .content-prescription .prescription-input input, main .content .co
   border-top: none;
   padding: .25rem .5rem;
   width: 85% !important;
+}
+
+main .content .content-prescription .prescription-input input[type='submit'].search-button, main .content .content-prescription .appointment-input input[type='submit'].search-button, main .content .content-prescription .form-input-field input[type='submit'].search-button, main .content .content-prescription .form-input-group input[type='submit'].search-button, main .content .content-appointment .prescription-input input[type='submit'].search-button, main .content .content-appointment .appointment-input input[type='submit'].search-button, main .content .content-appointment .form-input-field input[type='submit'].search-button, main .content .content-appointment .form-input-group input[type='submit'].search-button, main .content .content-search .prescription-input input[type='submit'].search-button, main .content .content-search .appointment-input input[type='submit'].search-button, main .content .content-search .form-input-field input[type='submit'].search-button, main .content .content-search .form-input-group input[type='submit'].search-button {
+  border: 1px solid blue !important;
+  background: white;
+  padding: .85rem !important;
+  border-radius: .5rem;
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
 }
 
 .active {

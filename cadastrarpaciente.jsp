@@ -21,8 +21,7 @@
                 <%@ include file="public/parts/sidebar_sec.jsp" %>
                     <section class="content">
                         <h1>Cadastrar Paciente</h1>
-                        <small class="content-subtitle">Preencha os campos a seguir para cadastrar paciente.
-                            </smal|content-subtitle">Preencha os campos a seguir para cadastrar paciente.</small>
+                        <small class="content-subtitle">Preencha os campos a seguir para cadastrar paciente.</small>
                         <div class="content-appointment">
                             <form action="" method="post">
                                 <div class="form-input-group">

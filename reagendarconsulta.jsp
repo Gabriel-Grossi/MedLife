@@ -23,7 +23,7 @@
                         <h1>Reagendar Consulta</h1>
                         <small class="content-subtitle">Preencha os campos a seguir para reagendar consulta.</small>
                         <div class="content-prescription">
-                            <form method="post">
+                            <form action="src/re_consulta.jsp" method="post">
                                 <div class="form-input-group">
                                     <div class="prescription-input">
                                         <label for="patientName">Nome do Paciente</label>

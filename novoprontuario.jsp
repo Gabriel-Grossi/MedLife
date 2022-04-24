@@ -24,7 +24,7 @@
                         <small class="content-subtitle">Preencha os campos a seguir para criar um novo
                             prontuário</small>
                         <div class="content-search">
-                            <form action="">
+                            <form action="src/nv_prontuario.jsp" method="post">
                                 <div class="form-input-group">
                                     <div class="form-input-field">
                                         <label for="patientName" class="patientData">Nome</label>
@@ -32,13 +32,13 @@
                                             placeholder="Insira aqui o nome do paciente">
                                     </div>
                                     <div class="form-input-field">
-                                        <label for="patientID" class="patientData">Idade</label>
-                                        <input type="number" name="patientID"
+                                        <label for="patientAge" class="patientData">Idade</label>
+                                        <input type="number" name="patientAge"
                                             placeholder="Insira aqui a idade do paciente" min="0" value=0>
                                     </div>
                                     <div class="form-input-field">
-                                        <label for="patientID" class="patientData">Plano de Saúde</label>
-                                        <select name="healthInsurance" id="healthInsurance">
+                                        <label for="patientHealthInsurance" class="patientData">Plano de Saúde</label>
+                                        <select name="patientHealthInsurance" id="patientHealthInsurance">
                                             <option value="Amil">Amil</option>
                                             <option value="Bradesco">Bradesco</option>
                                             <option value="NotreDame">NotreDame Intermédica</option>
